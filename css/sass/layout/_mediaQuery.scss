@@ -1,0 +1,178 @@
+@media (min-width: 576px) {
+
+    nav.mob {
+        display: none;
+    }
+
+    nav.desktop {
+        display: flex;
+    }
+
+    .sideBar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    body {
+        padding-left: 300px;
+    }
+
+    .boardContent {
+        .content {
+            .task {
+                width: 320px;
+                margin-inline: .6rem;
+            }
+        }
+    }
+
+    .backgroundTask {
+        .taskStatus {
+            width: 400px;
+        }
+    }
+
+    .createBoard {
+        width: 90%;
+        border-radius: 0 25px 25px 0;
+        &:hover {
+            background: #353544;
+        }
+    }
+
+}
+
+@media (min-width: 776px) {
+
+    .backgroundInput, .backgroundBoard {
+        .taskInput, .boardInput {
+            top: 8%;
+            width: 450px;
+            .heading {
+                font-size: 1.25rem;
+            }
+            h4 {
+                font-size: .95em;
+            }
+            input, textarea {
+                font-size: .9em;
+            }
+            .statusInput {
+                .status {
+                    padding: 0.75rem 0.65rem;
+                    border: 1px solid #47475a;
+                    position: relative;
+                    span {
+                        font-size: 1em;
+                    }
+                    ul {
+                        top: 44px;
+                    }
+                }
+            }
+        }
+    }
+
+    .backgroundBoard {
+        .boardInput {
+            width: 400px;
+        }
+    }
+
+    .newSubTasks, .craeteTask {
+        font-size: .9em;
+        padding-block: 1rem;
+    }
+
+    .message {
+        font-size: .9em;
+        padding: 0.55rem 0.75rem;
+    }
+
+    .backgroundTask {
+        .taskStatus {
+            .heading {
+                h3 {
+                    font-size: 1.1em;
+                }
+            }
+            .description {
+                font-size: .85em;
+                color: #999999;
+                font-weight: 500;
+                line-height: 20px;
+            }
+            .subtasks {
+                .inputSubtasks {
+                    label {
+                        font-size: .75em;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    
+
+}
+
+
+@media (min-width: 992px) {
+    
+    nav.desktop {
+        padding: 1.6rem 1.7rem;
+        h1 {
+            font-size: 1.75em;
+        }
+        .addTask {
+            font-size: 1.15em;
+        }
+        .more {
+            ul {
+                left: -77px;
+            }
+        }
+    }
+
+    .boardContent {
+        display: flex;
+        > div {
+            margin-inline: 1.2rem;
+        }
+    }
+
+    .boardContent {
+        .intro {
+            img {
+                width: 350px;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+    }
+
+}
+
+
+
+
+@media (max-width: 576px) {
+
+    nav.mob {
+        display: flex;
+    }
+
+    nav.desktop {
+        display: none;
+    }
+
+    .sideBar {
+        display: none;
+    }
+
+}

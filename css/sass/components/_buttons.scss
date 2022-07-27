@@ -1,0 +1,51 @@
+button {
+    @extend .smoothPointer;
+}
+.addTaskBtn {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    background-color: var(--Color3);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1em;
+    line-height: 1;
+    margin-left: auto;
+    &:hover {
+        background-color: #fff;
+        color: var(--Color3);
+    }
+}
+.createBoard {
+    background-color: transparent;
+    color: var(--Color3);
+    @extend .center-f;
+    font-size: .9em;
+    margin-bottom: .65rem;
+    padding-block: 0.65rem;
+    img {
+        filter: invert(49%) sepia(81%) saturate(3965%) hue-rotate(224deg) brightness(82%) contrast(85%);
+    }
+}
+
+.newSubTasks {
+    @extend .addTaskBtn;
+    background-color: #fff;
+    color: var(--Color3);
+    font-size: .75em;
+    @extend .center-f;
+    justify-content: center;
+    width: 100%;
+    margin: .4rem auto 1.6rem;
+    padding-block: .75rem;
+
+}
+
+.craeteTask {
+    @extend .newSubTasks;
+    background-color: var(--Color3);
+    color: #fff;
+}
+
+.createBoardBtn {
+    @extend .craeteTask;
+}

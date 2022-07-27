@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="img/favicon.png" sizes="32x32">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+</head>
+<body>
+
+    <!-- Message -->
+    <div class="message"></div>
+    <!-- Message -->
+
+
+    <!-- Nav Mobile -->
+    <nav class="mob">
+        <img src="img/favicon.png" alt="logo">
+        <div class="choseBoard controlUlBoard">
+            <span></span>
+            <img class="controlUlBoard" src="img/chevron-down.svg" alt="chevron-down">
+            <ul class="boardList">
+                <button class="createBoard creatBoardBtns"><img src="img/board.png" alt="board">+ Create New Board</button>
+            </ul>
+        </div>
+        <button class="addTaskBtn dont-click">+</button>
+        <div class="more is-50 dont-click">
+            <img class="dont-click" src="img/ellipsis-vertical.svg" alt="ellipsis-vertical">
+            <ul>
+                <li><a href="https://ayoub-mrz.github.io/Pomodoro-App/" target="_blank">Start Pomo</a></li>
+                <li class="dlt-Btn">Delete Board</li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Nav Mobile -->
+
+    <!-- Nav Desktop -->
+    <nav class="desktop">
+        <h1></h1>
+        <button class="addTaskBtn btn-55 dont-click">+Add New Tesk</button>
+        <div class="more is-60 dont-click">
+            <img class="dont-click" src="img/ellipsis-vertical.svg" alt="ellipsis-vertical">
+            <ul>
+                <li><a href="https://ayoub-mrz.github.io/Pomodoro-App/" target="_blank">Start Pomo</a></li>
+                <li class="dlt-Btn">Delete Board</li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Nav Desktop -->
+
+    <!-- Side Bar -->
+    <div class="sideBar">
+        <header><img src="img/logo.png" alt="logo"></header>
+        <div class="content">
+            <h4>All Board <span></span></h4>
+        </div>
+        <button class="createBoard creatBoardBtns">
+            <img class="creatBoardBtns" src="img/board.png" alt="">
+            <h5 class="creatBoardBtns">+Create New Board</h5>
+        </button>
+        <!-- <div class="theme">
+            <img src="img/sunny.svg" alt="light">
+            <div class="toggle-Bc"><div class="toggle"></div></div>
+            <img src="img/moon.svg" alt="dark">
+        </div> -->
+        <div class="authorTotch">Create By <span>Ayoub Mrz</span></div>
+    </div>
+    <!-- Side Bar -->
+
+    <!-- Board Content -->
+    <div class="boardContent">
+        <!-- Intro -->
+        <div class="intro">
+            <img src="img/intro.png" alt="intro">
+            <h1>Todo Help You To Get Things Done Faster.</h1>
+            <p>Manage projects, and reach new productivity peaks. From high rises to the home office.</p>
+        </div>
+        <!-- Intro -->
+        <!-- Empty -->
+        <div class="empty">
+            <img src="img/empty.jpg" alt="intro">
+            <h1>You Don't Have Any Tasks Try To Add Some.</h1>
+        </div>
+        <!-- Empty -->
+        <div class="todo">
+            <header>TODO <span>(4)</span></header>
+            <div class="content">
+            </div>
+        </div>
+        <div class="doing">
+            <header>DOING <span>(4)</span></header>
+            <div class="content">
+            </div>
+        </div>
+        <div class="done">
+            <header>DONE <span>(4)</span></header>
+            <div class="content">
+            </div>
+        </div>
+    </div>
+    <!-- Board Content -->
+
+    <!-- Task Input -->
+    <div class="backgroundInput">
+        <div class="taskInput">
+            <div class="heading">Add New Task</div>
+            <div class="titleInput">
+                <h4>Title</h4>
+                <input type="text" placeholder="e.g. Drink 1.5L Water.">
+            </div>
+            <div class="descriptionInput">
+                <h4>Descrition</h4>
+                <textarea name="" id="" cols="30" rows="10" placeholder="e.g. It is good to have enough water in the day."></textarea>
+            </div>
+            <div class="subTasksInput">
+                <h4>SubTasks</h4>
+                <div class="subtask">
+                    <input type="text" placeholder="e.g. Drink .5L After Break Fast.">
+                    <img class="deleteSubstask" src="img/close.svg" alt="close">
+                </div>
+                <div class="subtask">
+                    <input type="text" placeholder="e.g. Drink .5L After Lanch.">
+                    <img class="deleteSubstask" src="img/close.svg" alt="close">
+                </div>
+            </div>
+            <button class="newSubTasks">+Add New SubTasks</button>
+            <!-- <div class="statusInput">
+                <h4>Status</h4>
+                <div class="status">
+                    <span>Todo</span>
+                    <img src="img/chevron-down.svg" alt="chevron-down">
+                    <ul>
+                        <li class="active">
+                            <span>Todo</span>
+                        </li>
+                        <li>
+                            <span>Doing</span>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+            <button class="craeteTask">Create Task</button>
+        </div>
+    </div>
+    <!-- Task Input -->
+
+    <!-- Board Input -->
+    <div class="backgroundBoard">
+        <div class="boardInput">
+            <div class="heading">Create New Board</div>
+            <div class="nameInput">
+                <h4>Name Board</h4>
+                <input type="text" placeholder="Name Your Board">
+                <button class="createBoardBtn">Create Board</button>
+            </div>
+        </div>
+    </div>
+    <!-- Board Input -->
+
+    <!-- Task Status -->
+    <div class="backgroundTask">
+        <div class="taskStatus">
+            <div class="heading">
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <div class="more more-task">
+                    <img class="showDlt" src="img/ellipsis-vertical.svg" alt="ellipsis-vertical">
+                    <ul>
+                        <li class="delete-Task">Delele Taks</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="description">
+            </div>
+            <div class="subtasks">
+            </div>
+        </div>
+    </div>
+    <!-- Task Status -->
+
+    <!-- Script -->
+    <script src="js/navPops.js"></script>
+    <script src="js/toggleTheme.js"></script>
+    <script src="js/sideBar.js"></script>
+    <script src="js/inputsScript.js"></script>
+    <!-- Script -->
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    background: var(--Color1);
+}
+button, input, textarea {
+    border: none;
+    outline: none;
+}
+ul, li {
+    list-style: none;
+}
+ul {
+    z-index: 9;
+}
+a {
+    text-decoration: none;
+}
+// FramWorks
+.center-f {
+    display: flex;
+    align-items: center;
+}
+.center-g {
+    display: grid;
+    place-items: center;
+}
+.position-flow {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.smoothPointer {
+    transition: .5s;
+    cursor: pointer;
+}
+
+
+* {
+    scrollbar-color: #201f1f transparent;
+    scrollbar-width: thin;
+  }
+  ::-webkit-scrollbar {
+    width: .4em;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--Color3);
+    border: 3px solid transparent;
+    border-radius: 5px 0 0 5px;
+  }

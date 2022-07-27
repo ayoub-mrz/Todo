@@ -1,0 +1,712 @@
+.addTaskBtn, .newSubTasks, .craeteTask, .createBoardBtn {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  background-color: var(--Color3);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1em;
+  line-height: 1;
+  margin-left: auto;
+}
+.addTaskBtn:hover, .newSubTasks:hover, .craeteTask:hover, .createBoardBtn:hover {
+  background-color: #fff;
+  color: var(--Color3);
+}
+
+.createBoard {
+  background-color: transparent;
+  color: var(--Color3);
+  font-size: 0.9em;
+  margin-bottom: 0.65rem;
+  padding-block: 0.65rem;
+}
+.createBoard img {
+  filter: invert(49%) sepia(81%) saturate(3965%) hue-rotate(224deg) brightness(82%) contrast(85%);
+}
+
+.newSubTasks, .craeteTask, .createBoardBtn {
+  background-color: #fff;
+  color: var(--Color3);
+  font-size: 0.75em;
+  justify-content: center;
+  width: 100%;
+  margin: 0.4rem auto 1.6rem;
+  padding-block: 0.75rem;
+}
+
+.craeteTask, .createBoardBtn {
+  background-color: var(--Color3);
+  color: #fff;
+}
+
+.sideBar {
+  background-color: var(--Color2);
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.sideBar header {
+  padding: 1.35rem;
+  display: flex;
+}
+.sideBar header img {
+  width: 180px;
+  margin-inline: auto;
+}
+.sideBar .content {
+  margin-bottom: 1.25rem;
+}
+.sideBar .content h4 {
+  color: #818181;
+  font-size: 0.9em;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-left: 2rem;
+  margin-block: 1.45rem;
+}
+.sideBar .content .board, .sideBar .content .active {
+  padding: 0.6rem 0 0.6rem 2rem;
+  width: 90%;
+  border-radius: 0 25px 25px 0;
+}
+.sideBar .content .board > img, .sideBar .content .active > img {
+  height: 25px;
+  filter: invert(1);
+}
+.sideBar .content .board h5, .sideBar .content .active h5 {
+  font-size: 1rem;
+  margin-left: 1.2rem;
+  color: #9d9d9d;
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sideBar .content .board:hover:not(.active), .sideBar .content .active:hover:not(.active) {
+  background-color: #3b3b4a;
+}
+.sideBar .content .active {
+  background-color: var(--Color3);
+}
+.sideBar .content .active h5 {
+  color: #fff;
+}
+.sideBar .createBoard {
+  padding-left: 2rem;
+  font-size: 1.2em;
+}
+.sideBar .createBoard img {
+  height: 25px;
+  margin-right: 1.2rem;
+}
+.sideBar .authorTotch {
+  font-size: 0.95em;
+  margin: 0 auto 1.35rem;
+  color: #eaeaea;
+  font-family: "Lobster", cursive;
+  margin-top: auto;
+}
+.sideBar .authorTotch span {
+  font-family: "Tangerine", cursive;
+  font-size: 1.25em;
+  margin-left: 0.5rem;
+  color: #b39ddb;
+  font-weight: 600;
+}
+
+.backgroundInput, .backgroundBoard, .backgroundTask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3333333333);
+  z-index: 9;
+  overflow: auto;
+  display: none;
+  transition: 0.5s;
+}
+.backgroundInput .taskInput, .backgroundInput .boardInput, .backgroundInput .taskStatus, .backgroundBoard .taskInput, .backgroundBoard .boardInput, .backgroundBoard .taskStatus, .backgroundTask .taskInput, .backgroundTask .boardInput, .backgroundTask .taskStatus {
+  min-height: 50vh;
+  width: 95%;
+  background-color: var(--Color2);
+  border-radius: 5px;
+  padding: 1.55rem 1.35rem;
+  position: relative;
+  margin-bottom: 2rem;
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, -20px);
+  opacity: 0;
+  transition: 0.5s;
+}
+.backgroundInput .taskInput .heading, .backgroundInput .boardInput .heading, .backgroundInput .taskStatus .heading, .backgroundBoard .taskInput .heading, .backgroundBoard .boardInput .heading, .backgroundBoard .taskStatus .heading, .backgroundTask .taskInput .heading, .backgroundTask .boardInput .heading, .backgroundTask .taskStatus .heading {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.backgroundInput .taskInput input, .backgroundInput .taskInput textarea, .backgroundInput .boardInput input, .backgroundInput .boardInput textarea, .backgroundInput .taskStatus input, .backgroundInput .taskStatus textarea, .backgroundBoard .taskInput input, .backgroundBoard .taskInput textarea, .backgroundBoard .boardInput input, .backgroundBoard .boardInput textarea, .backgroundBoard .taskStatus input, .backgroundBoard .taskStatus textarea, .backgroundTask .taskInput input, .backgroundTask .taskInput textarea, .backgroundTask .boardInput input, .backgroundTask .boardInput textarea, .backgroundTask .taskStatus input, .backgroundTask .taskStatus textarea {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #47475a;
+  border-radius: 3px;
+  padding: 0.55rem 0.9rem;
+  color: #fff;
+  font-size: 0.75em;
+  resize: none;
+}
+.backgroundInput .taskInput h4, .backgroundInput .boardInput h4, .backgroundInput .taskStatus h4, .backgroundBoard .taskInput h4, .backgroundBoard .boardInput h4, .backgroundBoard .taskStatus h4, .backgroundTask .taskInput h4, .backgroundTask .boardInput h4, .backgroundTask .taskStatus h4 {
+  color: #dbdbdb;
+  margin-bottom: 0.4rem;
+  font-size: 0.75em;
+}
+.backgroundInput .taskInput > div, .backgroundInput .boardInput > div, .backgroundInput .taskStatus > div, .backgroundBoard .taskInput > div, .backgroundBoard .boardInput > div, .backgroundBoard .taskStatus > div, .backgroundTask .taskInput > div, .backgroundTask .boardInput > div, .backgroundTask .taskStatus > div {
+  margin-bottom: 1.6rem;
+}
+.backgroundInput .taskInput .descriptionInput textarea, .backgroundInput .boardInput .descriptionInput textarea, .backgroundInput .taskStatus .descriptionInput textarea, .backgroundBoard .taskInput .descriptionInput textarea, .backgroundBoard .boardInput .descriptionInput textarea, .backgroundBoard .taskStatus .descriptionInput textarea, .backgroundTask .taskInput .descriptionInput textarea, .backgroundTask .boardInput .descriptionInput textarea, .backgroundTask .taskStatus .descriptionInput textarea {
+  height: 85px;
+}
+.backgroundInput .taskInput .subTasksInput, .backgroundInput .boardInput .subTasksInput, .backgroundInput .taskStatus .subTasksInput, .backgroundBoard .taskInput .subTasksInput, .backgroundBoard .boardInput .subTasksInput, .backgroundBoard .taskStatus .subTasksInput, .backgroundTask .taskInput .subTasksInput, .backgroundTask .boardInput .subTasksInput, .backgroundTask .taskStatus .subTasksInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: unset;
+}
+.backgroundInput .taskInput .subTasksInput .subtask input, .backgroundInput .boardInput .subTasksInput .subtask input, .backgroundInput .taskStatus .subTasksInput .subtask input, .backgroundBoard .taskInput .subTasksInput .subtask input, .backgroundBoard .boardInput .subTasksInput .subtask input, .backgroundBoard .taskStatus .subTasksInput .subtask input, .backgroundTask .taskInput .subTasksInput .subtask input, .backgroundTask .boardInput .subTasksInput .subtask input, .backgroundTask .taskStatus .subTasksInput .subtask input {
+  margin-block: 0.4rem;
+}
+.backgroundInput .taskInput .subTasksInput .subtask img, .backgroundInput .boardInput .subTasksInput .subtask img, .backgroundInput .taskStatus .subTasksInput .subtask img, .backgroundBoard .taskInput .subTasksInput .subtask img, .backgroundBoard .boardInput .subTasksInput .subtask img, .backgroundBoard .taskStatus .subTasksInput .subtask img, .backgroundTask .taskInput .subTasksInput .subtask img, .backgroundTask .boardInput .subTasksInput .subtask img, .backgroundTask .taskStatus .subTasksInput .subtask img {
+  height: 25px;
+  filter: invert(0.8);
+  margin-left: 5px;
+  cursor: pointer;
+}
+.backgroundInput .taskInput .statusInput .status, .backgroundInput .boardInput .statusInput .status, .backgroundInput .taskStatus .statusInput .status, .backgroundBoard .taskInput .statusInput .status, .backgroundBoard .boardInput .statusInput .status, .backgroundBoard .taskStatus .statusInput .status, .backgroundTask .taskInput .statusInput .status, .backgroundTask .boardInput .statusInput .status, .backgroundTask .taskStatus .statusInput .status {
+  padding: 0.4rem 0.65rem;
+  border: 1px solid #47475a;
+  position: relative;
+}
+.backgroundInput .taskInput .statusInput .status span, .backgroundInput .boardInput .statusInput .status span, .backgroundInput .taskStatus .statusInput .status span, .backgroundBoard .taskInput .statusInput .status span, .backgroundBoard .boardInput .statusInput .status span, .backgroundBoard .taskStatus .statusInput .status span, .backgroundTask .taskInput .statusInput .status span, .backgroundTask .boardInput .statusInput .status span, .backgroundTask .taskStatus .statusInput .status span {
+  color: #fff;
+  font-size: 0.7em;
+}
+.backgroundInput .taskInput .statusInput .status img, .backgroundInput .boardInput .statusInput .status img, .backgroundInput .taskStatus .statusInput .status img, .backgroundBoard .taskInput .statusInput .status img, .backgroundBoard .boardInput .statusInput .status img, .backgroundBoard .taskStatus .statusInput .status img, .backgroundTask .taskInput .statusInput .status img, .backgroundTask .boardInput .statusInput .status img, .backgroundTask .taskStatus .statusInput .status img {
+  height: 15px;
+  margin-left: auto;
+  filter: invert(49%) sepia(81%) saturate(3965%) hue-rotate(224deg) brightness(82%) contrast(85%);
+}
+.backgroundInput .taskInput .statusInput .status ul, .backgroundInput .boardInput .statusInput .status ul, .backgroundInput .taskStatus .statusInput .status ul, .backgroundBoard .taskInput .statusInput .status ul, .backgroundBoard .boardInput .statusInput .status ul, .backgroundBoard .taskStatus .statusInput .status ul, .backgroundTask .taskInput .statusInput .status ul, .backgroundTask .boardInput .statusInput .status ul, .backgroundTask .taskStatus .statusInput .status ul {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background-color: var(--Color1);
+  width: 100.5%;
+  border: 1px solid #47475a;
+  overflow: hidden;
+  height: 0;
+}
+.backgroundInput .taskInput .statusInput .status ul li, .backgroundInput .boardInput .statusInput .status ul li, .backgroundInput .taskStatus .statusInput .status ul li, .backgroundBoard .taskInput .statusInput .status ul li, .backgroundBoard .boardInput .statusInput .status ul li, .backgroundBoard .taskStatus .statusInput .status ul li, .backgroundTask .taskInput .statusInput .status ul li, .backgroundTask .boardInput .statusInput .status ul li, .backgroundTask .taskStatus .statusInput .status ul li {
+  display: flex;
+  padding: 0.4rem 0.65rem;
+}
+.backgroundInput .taskInput .statusInput .status ul li:hover, .backgroundInput .boardInput .statusInput .status ul li:hover, .backgroundInput .taskStatus .statusInput .status ul li:hover, .backgroundBoard .taskInput .statusInput .status ul li:hover, .backgroundBoard .boardInput .statusInput .status ul li:hover, .backgroundBoard .taskStatus .statusInput .status ul li:hover, .backgroundTask .taskInput .statusInput .status ul li:hover, .backgroundTask .boardInput .statusInput .status ul li:hover, .backgroundTask .taskStatus .statusInput .status ul li:hover {
+  background-color: #3d3b62;
+}
+.backgroundInput .taskInput .statusInput .status ul li.active, .backgroundInput .boardInput .statusInput .status ul li.active, .backgroundInput .taskStatus .statusInput .status ul li.active, .backgroundBoard .taskInput .statusInput .status ul li.active, .backgroundBoard .boardInput .statusInput .status ul li.active, .backgroundBoard .taskStatus .statusInput .status ul li.active, .backgroundTask .taskInput .statusInput .status ul li.active, .backgroundTask .boardInput .statusInput .status ul li.active, .backgroundTask .taskStatus .statusInput .status ul li.active {
+  background-color: var(--Color3);
+}
+.backgroundInput .taskInput .statusInput .status ul li:not(:last-child), .backgroundInput .boardInput .statusInput .status ul li:not(:last-child), .backgroundInput .taskStatus .statusInput .status ul li:not(:last-child), .backgroundBoard .taskInput .statusInput .status ul li:not(:last-child), .backgroundBoard .boardInput .statusInput .status ul li:not(:last-child), .backgroundBoard .taskStatus .statusInput .status ul li:not(:last-child), .backgroundTask .taskInput .statusInput .status ul li:not(:last-child), .backgroundTask .boardInput .statusInput .status ul li:not(:last-child), .backgroundTask .taskStatus .statusInput .status ul li:not(:last-child) {
+  border-bottom: 1px solid #47475a;
+}
+
+.backgroundBoard .boardInput {
+  min-height: 25vh;
+  top: 20%;
+}
+.backgroundBoard .boardInput input {
+  outline: 1px solid #433f84;
+  margin-bottom: 1rem;
+}
+
+.backgroundTask .taskStatus {
+  min-height: 30vh;
+  top: 20%;
+}
+.backgroundTask .taskStatus .heading {
+  justify-content: space-between;
+}
+.backgroundTask .taskStatus .heading h3 {
+  font-size: 0.9em;
+}
+.backgroundTask .taskStatus .heading img {
+  height: 20px;
+  filter: invert(1);
+}
+.backgroundTask .taskStatus .description {
+  font-size: 0.65em;
+  color: #999999;
+  font-weight: 500;
+  line-height: 20px;
+}
+.backgroundTask .taskStatus .subtasks h4 {
+  font-size: 0.75em;
+}
+.backgroundTask .taskStatus .subtasks .inputSubtasks {
+  padding: 0.8rem 1rem;
+  margin-block: 0.45rem;
+  background-color: #212130;
+  border-radius: 2px;
+}
+.backgroundTask .taskStatus .subtasks .inputSubtasks input {
+  width: unset;
+  margin-right: 0.55rem;
+  accent-color: var(--Color3);
+}
+.backgroundTask .taskStatus .subtasks .inputSubtasks label {
+  font-size: 0.65em;
+  color: #fff;
+}
+.backgroundTask .taskStatus .subtasks .inputSubtasks input:checked ~ label {
+  color: #9a9aa3;
+  text-decoration: line-through;
+}
+
+.message {
+  position: fixed;
+  top: 15px;
+  right: 5px;
+  font-size: 0.65em;
+  padding: 0.4rem 0.65rem;
+  background-color: rgba(211, 47, 47, 0.768627451);
+  color: #fff;
+  border-radius: 5px;
+  z-index: 99;
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 0.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: var(--Color1);
+}
+
+button, input, textarea {
+  border: none;
+  outline: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+ul {
+  z-index: 9;
+}
+
+a {
+  text-decoration: none;
+}
+
+.center-f, .boardContent .content, .boardContent .intro, .boardContent .empty, nav.desktop, nav.mob .choseBoard ul.boardList li, nav.mob .choseBoard, nav.mob, .createBoard, .newSubTasks, .craeteTask, .createBoardBtn, .sideBar .content .board, .sideBar .content .active, .backgroundInput .taskInput .subTasksInput .subtask, .backgroundInput .boardInput .subTasksInput .subtask, .backgroundInput .taskStatus .subTasksInput .subtask, .backgroundBoard .taskInput .subTasksInput .subtask, .backgroundBoard .boardInput .subTasksInput .subtask, .backgroundBoard .taskStatus .subTasksInput .subtask, .backgroundTask .taskInput .subTasksInput .subtask, .backgroundTask .boardInput .subTasksInput .subtask, .backgroundTask .taskStatus .subTasksInput .subtask, .backgroundInput .taskInput .statusInput .status, .backgroundInput .boardInput .statusInput .status, .backgroundInput .taskStatus .statusInput .status, .backgroundBoard .taskInput .statusInput .status, .backgroundBoard .boardInput .statusInput .status, .backgroundBoard .taskStatus .statusInput .status, .backgroundTask .taskInput .statusInput .status, .backgroundTask .boardInput .statusInput .status, .backgroundTask .taskStatus .statusInput .status, .backgroundTask .taskStatus .heading, .backgroundTask .taskStatus .subtasks .inputSubtasks {
+  display: flex;
+  align-items: center;
+}
+
+.center-g {
+  display: grid;
+  place-items: center;
+}
+
+.position-flow, nav.mob .choseBoard ul.boardList {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.smoothPointer, .boardContent .content .task, .more ul li a, .more ul li, .more > img:last-of-type, nav.mob .choseBoard ul.boardList li a, nav.mob .choseBoard ul.boardList li, nav.mob .choseBoard, button, .sideBar .content .board, .sideBar .content .active, .backgroundInput .taskInput .statusInput .status, .backgroundInput .boardInput .statusInput .status, .backgroundInput .taskStatus .statusInput .status, .backgroundBoard .taskInput .statusInput .status, .backgroundBoard .boardInput .statusInput .status, .backgroundBoard .taskStatus .statusInput .status, .backgroundTask .taskInput .statusInput .status, .backgroundTask .boardInput .statusInput .status, .backgroundTask .taskStatus .statusInput .status, .backgroundInput .taskInput .statusInput .status ul, .backgroundInput .boardInput .statusInput .status ul, .backgroundInput .taskStatus .statusInput .status ul, .backgroundBoard .taskInput .statusInput .status ul, .backgroundBoard .boardInput .statusInput .status ul, .backgroundBoard .taskStatus .statusInput .status ul, .backgroundTask .taskInput .statusInput .status ul, .backgroundTask .boardInput .statusInput .status ul, .backgroundTask .taskStatus .statusInput .status ul, .backgroundInput .taskInput .statusInput .status ul li, .backgroundInput .boardInput .statusInput .status ul li, .backgroundInput .taskStatus .statusInput .status ul li, .backgroundBoard .taskInput .statusInput .status ul li, .backgroundBoard .boardInput .statusInput .status ul li, .backgroundBoard .taskStatus .statusInput .status ul li, .backgroundTask .taskInput .statusInput .status ul li, .backgroundTask .boardInput .statusInput .status ul li, .backgroundTask .taskStatus .statusInput .status ul li, .backgroundTask .taskStatus .heading img, .backgroundTask .taskStatus .subtasks .inputSubtasks input, .backgroundTask .taskStatus .subtasks .inputSubtasks label {
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+* {
+  scrollbar-color: #201f1f transparent;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 0.4em;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--Color3);
+  border: 3px solid transparent;
+  border-radius: 5px 0 0 5px;
+}
+
+nav.mob {
+  background-color: var(--Color2);
+  padding: 1rem 0.75rem;
+}
+nav.mob > img:first-of-type {
+  height: 40px;
+}
+nav.mob .choseBoard {
+  margin-left: 0.8rem;
+  position: relative;
+}
+nav.mob .choseBoard span {
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+nav.mob .choseBoard > img {
+  height: 15px;
+  filter: invert(49%) sepia(81%) saturate(3965%) hue-rotate(224deg) brightness(82%) contrast(85%);
+  margin-left: 3px;
+}
+nav.mob .choseBoard ul.boardList {
+  background-color: var(--Color2);
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9em;
+  width: 180px;
+  padding-inline: 1rem;
+  overflow: hidden;
+  transition: height 1s;
+}
+nav.mob .choseBoard ul.boardList li {
+  margin-block: 0.7rem;
+  color: #fff;
+}
+nav.mob .choseBoard ul.boardList li a {
+  color: #fff;
+}
+nav.mob .choseBoard ul.boardList li a:hover {
+  letter-spacing: 2px;
+}
+nav.mob .choseBoard ul.boardList li img {
+  filter: invert(1);
+}
+nav.mob .choseBoard ul.boardList li:hover span {
+  color: var(--Color3);
+}
+nav.mob .choseBoard ul.boardList li:hover img {
+  filter: invert(49%) sepia(81%) saturate(3965%) hue-rotate(224deg) brightness(82%) contrast(85%);
+}
+nav.mob .choseBoard ul.boardList li.active span {
+  color: var(--Color3);
+}
+nav.mob .choseBoard ul.boardList li.active img {
+  filter: invert(49%) sepia(81%) saturate(3965%) hue-rotate(224deg) brightness(82%) contrast(85%);
+}
+nav.mob .choseBoard ul.boardList img {
+  height: 15px;
+  margin-right: 8px;
+}
+nav.mob .addTask {
+  margin-left: auto;
+}
+
+.more {
+  position: relative;
+}
+.more > img:last-of-type {
+  width: 25px;
+  filter: invert(1);
+  margin-left: 0.6rem;
+}
+.more ul {
+  position: absolute;
+  top: 50px;
+  left: -87px;
+  background-color: var(--Color2);
+  padding-inline: 1rem;
+  width: 135px;
+  overflow: hidden;
+  transition: height 0.5s;
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.3019607843);
+}
+.more ul li {
+  margin-block: 0.6rem;
+  color: #fff;
+  font-size: 0.9em;
+}
+.more ul li a {
+  color: #fff;
+}
+.more ul li a:hover {
+  letter-spacing: 2px;
+}
+.more ul li:hover {
+  letter-spacing: 1px;
+}
+.more ul li:last-child {
+  color: #e57373;
+}
+
+.more-task ul {
+  top: 25px;
+  background: #21212d;
+  display: none;
+}
+
+nav.desktop {
+  background-color: var(--Color2);
+  padding: 1.35rem 1.15rem;
+}
+nav.desktop h1 {
+  font-size: 1.2em;
+  color: #fff;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+}
+nav.desktop .addTask {
+  font-size: 0.9em;
+}
+nav.desktop .more ul {
+  top: 45px;
+  left: -81px;
+  width: 140px;
+}
+
+.dont-click {
+  opacity: 0.4;
+  cursor: not-allowed !important;
+}
+
+.boardContent {
+  background-color: var(--Color1);
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  padding-top: 1.45rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+.boardContent header {
+  font-size: 0.95em;
+  color: #818181;
+  padding: 0.65rem 0 0.65rem 2.25rem;
+  position: relative;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.062745098);
+  letter-spacing: 1px;
+}
+.boardContent header:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+.boardContent > div:not(.intro) {
+  display: none;
+  min-width: 320px;
+}
+.boardContent .intro, .boardContent .empty {
+  width: 85%;
+  position: absolute;
+  top: 500%;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  text-align: center;
+}
+.boardContent .intro img, .boardContent .empty img {
+  width: 250px;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+.boardContent .intro h1, .boardContent .empty h1 {
+  color: #fff;
+  font-size: 1.2em;
+  margin-block: 0.85rem 1.2rem;
+  text-align: center;
+}
+.boardContent .intro p, .boardContent .empty p {
+  font-size: 0.8em;
+  font-weight: 700;
+  text-align: center;
+  color: #918f97;
+  margin-top: 0.65rem;
+}
+.boardContent .todo header:before {
+  background-color: #4ac5eb;
+}
+.boardContent .doing header:before {
+  background-color: #8470f2;
+}
+.boardContent .done header:before {
+  background-color: #65e3ae;
+}
+.boardContent .content {
+  flex-direction: column;
+}
+.boardContent .content .task {
+  background-color: var(--Color2);
+  width: 85%;
+  margin-block: 1.2rem;
+  border-radius: 5px;
+  padding: 0.65rem;
+}
+.boardContent .content .task:hover {
+  background-color: #3b3b4a;
+}
+.boardContent .content .task h3 {
+  font-size: 0.9em;
+  color: #fff;
+  margin-bottom: 0.55rem;
+  font-weight: 500;
+}
+.boardContent .content .task span {
+  font-size: 0.7em;
+  font-weight: 600;
+  color: #a7a7bd;
+}
+
+.boardContent .content .itsDone {
+  background: #1f7451;
+  opacity: 0.8 !important;
+  pointer-events: none;
+}
+
+@media (min-width: 576px) {
+  nav.mob {
+    display: none;
+  }
+  nav.desktop {
+    display: flex;
+  }
+  .sideBar {
+    display: flex;
+    flex-direction: column;
+  }
+  body {
+    padding-left: 300px;
+  }
+  .boardContent .content .task {
+    width: 320px;
+    margin-inline: 0.6rem;
+  }
+  .backgroundTask .taskStatus {
+    width: 400px;
+  }
+  .createBoard {
+    width: 90%;
+    border-radius: 0 25px 25px 0;
+  }
+  .createBoard:hover {
+    background: #353544;
+  }
+}
+@media (min-width: 776px) {
+  .backgroundInput .taskInput, .backgroundInput .boardInput, .backgroundBoard .taskInput, .backgroundBoard .boardInput {
+    top: 8%;
+    width: 450px;
+  }
+  .backgroundInput .taskInput .heading, .backgroundInput .boardInput .heading, .backgroundBoard .taskInput .heading, .backgroundBoard .boardInput .heading {
+    font-size: 1.25rem;
+  }
+  .backgroundInput .taskInput h4, .backgroundInput .boardInput h4, .backgroundBoard .taskInput h4, .backgroundBoard .boardInput h4 {
+    font-size: 0.95em;
+  }
+  .backgroundInput .taskInput input, .backgroundInput .taskInput textarea, .backgroundInput .boardInput input, .backgroundInput .boardInput textarea, .backgroundBoard .taskInput input, .backgroundBoard .taskInput textarea, .backgroundBoard .boardInput input, .backgroundBoard .boardInput textarea {
+    font-size: 0.9em;
+  }
+  .backgroundInput .taskInput .statusInput .status, .backgroundInput .boardInput .statusInput .status, .backgroundBoard .taskInput .statusInput .status, .backgroundBoard .boardInput .statusInput .status {
+    padding: 0.75rem 0.65rem;
+    border: 1px solid #47475a;
+    position: relative;
+  }
+  .backgroundInput .taskInput .statusInput .status span, .backgroundInput .boardInput .statusInput .status span, .backgroundBoard .taskInput .statusInput .status span, .backgroundBoard .boardInput .statusInput .status span {
+    font-size: 1em;
+  }
+  .backgroundInput .taskInput .statusInput .status ul, .backgroundInput .boardInput .statusInput .status ul, .backgroundBoard .taskInput .statusInput .status ul, .backgroundBoard .boardInput .statusInput .status ul {
+    top: 44px;
+  }
+  .backgroundBoard .boardInput {
+    width: 400px;
+  }
+  .newSubTasks, .createBoardBtn, .craeteTask {
+    font-size: 0.9em;
+    padding-block: 1rem;
+  }
+  .message {
+    font-size: 0.9em;
+    padding: 0.55rem 0.75rem;
+  }
+  .backgroundTask .taskStatus .heading h3 {
+    font-size: 1.1em;
+  }
+  .backgroundTask .taskStatus .description {
+    font-size: 0.85em;
+    color: #999999;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  .backgroundTask .taskStatus .subtasks .inputSubtasks label {
+    font-size: 0.75em;
+    color: #fff;
+  }
+}
+@media (min-width: 992px) {
+  nav.desktop {
+    padding: 1.6rem 1.7rem;
+  }
+  nav.desktop h1 {
+    font-size: 1.75em;
+  }
+  nav.desktop .addTask {
+    font-size: 1.15em;
+  }
+  nav.desktop .more ul {
+    left: -77px;
+  }
+  .boardContent {
+    display: flex;
+  }
+  .boardContent > div {
+    margin-inline: 1.2rem;
+  }
+  .boardContent .intro img, .boardContent .empty img {
+    width: 350px;
+  }
+  .boardContent .intro h1, .boardContent .empty h1 {
+    font-size: 1.4rem;
+  }
+  .boardContent .intro p, .boardContent .empty p {
+    font-size: 1em;
+  }
+}
+@media (max-width: 576px) {
+  nav.mob {
+    display: flex;
+  }
+  nav.desktop {
+    display: none;
+  }
+  .sideBar {
+    display: none;
+  }
+}/*# sourceMappingURL=main.css.map */

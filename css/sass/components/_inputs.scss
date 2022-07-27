@@ -1,0 +1,180 @@
+.backgroundInput, .backgroundBoard, .backgroundTask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #00000055;
+    z-index: 9;
+    overflow: auto;
+    display: none;
+    transition: .5s;
+    .taskInput, .boardInput, .taskStatus {
+        min-height: 50vh;
+        width: 95%;;
+        background-color: var(--Color2);
+        border-radius: 5px;
+        padding: 1.55rem 1.35rem;
+        position: relative;
+        margin-bottom: 2rem;
+        top: 3%;
+        left: 50%;
+        transform: translate(-50%, -20px);
+        opacity: 0;
+        transition: .5s;
+        .heading {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        input, textarea {
+            width: 100%;
+            background-color: transparent;
+            border: 1px solid #47475a;
+            border-radius: 3px;
+            padding: 0.55rem 0.9rem;
+            color: #fff;
+            font-size: .75em;
+            resize: none;
+        }
+        h4 {
+            color: #dbdbdb;
+            margin-bottom: 0.4rem;
+            font-size: .75em;
+        }
+        > div {
+            margin-bottom: 1.6rem;
+        }
+        .descriptionInput{
+            textarea {
+                height: 85px;
+            }
+        }
+        .subTasksInput {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: unset;
+            .subtask {
+                @extend .center-f;
+                input {
+                    margin-block: .4rem;
+                }
+                img {
+                    height: 25px;
+                    filter: invert(.8);
+                    margin-left: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .statusInput {
+            .status {
+                @extend .center-f;
+                padding: 0.4rem 0.65rem;
+                border: 1px solid #47475a;
+                position: relative;
+                @extend .smoothPointer;
+                span {
+                    color: #fff;
+                    font-size: .7em;
+                }
+                img {
+                    height: 15px;
+                    margin-left: auto;
+                    filter: invert(49%) sepia(81%) saturate(3965%) hue-rotate(224deg) brightness(82%) contrast(85%);
+                }
+                ul {
+                    position: absolute;
+                    top: 28px;
+                    left: 0;
+                    background-color: var(--Color1);
+                    width: 100.5%;
+                    border: 1px solid #47475a;
+                    overflow: hidden;
+                    height: 0;
+                @extend .smoothPointer;
+                    li {
+                        display: flex;
+                        padding: 0.4rem 0.65rem;
+                        @extend .smoothPointer;
+                        &:hover {
+                            background-color: #3d3b62;
+                        }
+                        &.active {
+                            background-color: var(--Color3);
+                        }
+                    }
+                    li:not(:last-child) {
+                        border-bottom: 1px solid #47475a;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+.backgroundBoard {
+    .boardInput {
+        min-height: 25vh;
+        top: 20%;
+        input {
+            outline: 1px solid #433f84;
+                margin-bottom: 1rem;
+        }
+    }
+}
+
+.backgroundTask{
+    .taskStatus {
+        min-height: 30vh;
+        top: 20%;
+        .heading {
+            @extend .center-f;
+            justify-content: space-between;
+            h3 {
+                font-size: .9em;
+            }
+            img {
+                height: 20px;
+                filter: invert(1);
+                @extend .smoothPointer;
+            }
+        }
+        .description {
+            font-size: .65em;
+            color: #999999;
+            font-weight: 500;
+            line-height: 20px;
+        }
+        .subtasks {
+            h4 {
+                font-size: .75em;
+            }
+            .inputSubtasks {
+                padding: 0.8rem 1rem;
+                margin-block: 0.45rem;
+                background-color: #212130;
+                border-radius: 2px;
+                @extend .center-f;
+                input {
+                    width: unset;
+                    margin-right: .55rem;
+                    accent-color: var(--Color3);
+                    @extend .smoothPointer;
+                }
+                label {
+                    font-size: .65em;
+                    color: #fff;
+                    @extend .smoothPointer;
+                }
+                input:checked ~ label {
+                    color: #9a9aa3;
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+}
